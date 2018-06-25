@@ -1,5 +1,5 @@
 from .base import *
-
+# LOCAL
 
 DATABASES = {
     'default': {
