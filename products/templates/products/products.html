@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% block content %}
+<h3>Products</h3>
+
+{% for product in items %}
+<p>
+    <img src="{{ MEDIA_URL}}{{product.image}}"/> {{product.name}} 
+    <form method="POST" action="{% url 'add_to_cart' %}">
+        {% csrf_token %}
+        <input type="hidden" name="product_id" value="{{ product.id }}"/>
+        <input type="submit" value="Add To Cart"/>
+    </form>
+</p>
+{% endfor %}
+
+{% endblock content %}

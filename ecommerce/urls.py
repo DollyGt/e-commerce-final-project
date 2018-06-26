@@ -15,12 +15,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from products import urls as products_urls
+from cart import urls as cart_urls
 from accounts import urls as accounts_urls
 from django.conf.urls import include
-from posts.views import get_posts
+from home.views import get_index
+from products.views import get_products
+from django.views.static import serve
+from django.conf import settings
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', get_posts),
     path('accounts/', include(accounts_urls)),
+    path('products/', include(products_urls)),
+    path('cart/', include(cart_urls)),
+    path('media/<path:path>', serve, {'document_root': settings.MEDIA_ROOT}),
+    path(r'', get_products, name='home'),
 ]
