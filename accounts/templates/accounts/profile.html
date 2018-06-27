@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
-
+{% load bootstrap_tags %}
+{% load static from staticfiles %}
 {% block content %}
 
 <h3>Profile</h3>
@@ -8,11 +9,5 @@
 <p>{{user.username}}</p>
 <p>{{user.email}}</p>
 
-<h3> Liked Posts</h3>
-
-{% for post in user.liked_posts.all %}
-
-<p><a href='#'>{{ post.title }}</a></p>
-
-{% endfor %}
+</br>
 {% endblock content %}

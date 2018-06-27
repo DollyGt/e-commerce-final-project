@@ -1,17 +1,22 @@
 {% extends 'base.html' %}
 {% load static from staticfiles %}
+{% load bootstrap_tags %}
 {% block content %}
-<h3>Products</h3>
-
 {% for product in items %}
-<p>
-    <img src="{{ MEDIA_URL}}{{product.image}}"/> {{product.name}} 
+
+<h2>Products</h2>
+<p>product.description</p>
+
+    <img src="{{ MEDIA_URL}}{{product.image}}" width=100px></img> 
+    <ul>
+    <li>{{product.name}}</li>
+    <li>{{product.price}}</li>
+    </ull>
     <form method="POST" action="{% url 'add_to_cart' %}">
         {% csrf_token %}
         <input type="hidden" name="product_id" value="{{ product.id }}"/>
         <input type="submit" value="Add To Cart"/>
     </form>
-</p>
-{% endfor %}
 
+{% endfor %}
 {% endblock content %}

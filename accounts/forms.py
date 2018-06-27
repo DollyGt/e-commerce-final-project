@@ -10,9 +10,7 @@ class UserLoginForm(forms.Form):
     """
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput)
-    
-    
-
+  
 class UserRegistrationForm(UserCreationForm):
     """
     Used by the user to sign up with the website

@@ -10,8 +10,7 @@
 
     {{ form | as_bootstrap }}
     
-    <p>Forgot your password? Click <a href="#">here</a>.</p>
-    
     <input type="submit" value="Login"/>
-    
+    <p><a href="{% url 'password_reset' %}">Forgot Your Password?</a></p>
 </form>
+{% endblock content %}

@@ -1,9 +1,29 @@
-from django.shortcuts import render, get_object_or_404, HttpResponse
+from django.shortcuts import render, get_object_or_404, HttpResponse, redirect
 from products.models import Product
 
 # Create your views here.
 def view_cart(request):
-    return render(request, "cart/cart.html")
+    cart = request.session.get('cart', {})
+    cart_total = 0
+    cart_items = []
+    
+    for p in cart:
+        phone = get_object_or_404(Product, pk=p)
+        quantity = cart[p]
+        
+        cart_item = {
+            'product': phone,
+            # 'image': product.image,
+            'quantity': quantity,
+            # 'price': product.price,
+            'sub_total': phone.price * quantity
+        }
+        cart_items.append(cart_item)
+        cart_total += cart_item['sub_total']
+        
+
+    return render(request, "cart/cart.html", {'cart_items': cart_items, 'cart_total': cart_total})
+
     
 def add_to_cart(request):
 
@@ -22,3 +42,11 @@ def add_to_cart(request):
     
     # Redirect somewhere
     return HttpResponse(cart[id])
+    
+def remove_item(request): 
+    id = request.POST['product_id']
+    products = get_object_or_404(Product, pk=id)
+    cart = request.session.get('cart', {})
+    del cart[id]
+    request.session['cart'] = cart
+    return redirect('view_cart')
