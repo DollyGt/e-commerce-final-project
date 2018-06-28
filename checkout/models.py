@@ -1,7 +1,8 @@
 from django.db import models
-from products.models import Product
 
-# Create your models here - Checkout.
+# Create your models here.
+from django.db import models
+from products.models import Product
 
 class Order(models.Model):
     full_name = models.CharField(max_length=50, blank=False)
@@ -12,16 +13,17 @@ class Order(models.Model):
     street_address_1 = models.CharField(max_length=40, blank=False)
     street_address_2 = models.CharField(max_length=40, blank=False)
     county = models.CharField(max_length=40, blank=False)
-    date = models.DateField()
+    date = models.DateField(auto_now_add=True)
+    
 
     def __str__(self):
         return "{0}-{1}-{2}".format(self.id, self.date, self.full_name)
-
+        
 
 class OrderLineItem(models.Model):
-    order = models.ForeignKey(Order, null=False, related_name="line_items", default= 1, on_delete=models.SET_DEFAULT)
-    product = models.ForeignKey(Product, null=False, related_name="orders", default= 1, on_delete=models.SET_DEFAULT)
+    order = models.ForeignKey(Order, null=False, related_name="line_items", on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, null=False, related_name="orders", on_delete=models.PROTECT)
     quantity = models.IntegerField(blank=False)
-
+    
     def __str__(self):
         return "{0} {1} @ {2}".format(self.quantity, self.product.name, self.product.price)

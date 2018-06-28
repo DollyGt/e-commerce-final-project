@@ -2,16 +2,17 @@
 {% load static from staticfiles %}
 {% load bootstrap_tags %}
 {% block content %}
-{% for product in items %}
 
 <h2>Products</h2>
+
+{% for product in items %}
 <p>product.description</p>
 
-    <img src="{{ MEDIA_URL}}{{product.image}}" width=100px></img> 
+    <img src="{{ MEDIA_URL}}{{product.image}}" width=300px></img> 
     <ul>
     <li>{{product.name}}</li>
     <li>{{product.price}}</li>
-    </ull>
+    </ul>
     <form method="POST" action="{% url 'add_to_cart' %}">
         {% csrf_token %}
         <input type="hidden" name="product_id" value="{{ product.id }}"/>

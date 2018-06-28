@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'home',
     'products',
     'cart',
+    'checkout',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +124,5 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
+STRIPE_PUBLISHABLE = os.environ.get('STRIPE_PUBLISHABLE_KEY')
+STRIPE_SECRET = os.environ.get('STRIPE_SECRET_KEY')

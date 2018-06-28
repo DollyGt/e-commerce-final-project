@@ -1,30 +1,15 @@
 from django.shortcuts import render, get_object_or_404, HttpResponse, redirect
 from products.models import Product
+from .utils import get_cart_items_and_total
 
 # Create your views here.
 def view_cart(request):
     cart = request.session.get('cart', {})
-    cart_total = 0
-    cart_items = []
-    
-    for p in cart:
-        phone = get_object_or_404(Product, pk=p)
-        quantity = cart[p]
-        
-        cart_item = {
-            'product': phone,
-            # 'image': product.image,
-            'quantity': quantity,
-            # 'price': product.price,
-            'sub_total': phone.price * quantity
-        }
-        cart_items.append(cart_item)
-        cart_total += cart_item['sub_total']
-        
+    context = get_cart_items_and_total(cart)
+    return render(request, "cart/cart.html", context)
 
-    return render(request, "cart/cart.html", {'cart_items': cart_items, 'cart_total': cart_total})
-
-    
+  
+  
 def add_to_cart(request):
 
     # Get the product we're adding
@@ -41,7 +26,7 @@ def add_to_cart(request):
     request.session['cart'] = cart
     
     # Redirect somewhere
-    return HttpResponse(cart[id])
+    return redirect('get_products')
     
 def remove_item(request): 
     id = request.POST['product_id']
