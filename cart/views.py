@@ -32,6 +32,10 @@ def remove_item(request):
     id = request.POST['product_id']
     products = get_object_or_404(Product, pk=id)
     cart = request.session.get('cart', {})
-    del cart[id]
+    
+    if cart[id] > 1:
+        cart[id] = cart.get(id, 0) - 1
+    else:
+        del cart[id]
     request.session['cart'] = cart
     return redirect('view_cart')
