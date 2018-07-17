@@ -1,3 +1,4 @@
+
 {% load static from staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
@@ -8,18 +9,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://bootswatch.com/3/sandstone/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="static/css/style.css"/>
     {% block head_js %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
    
     {% endblock head_js %}
   
-    <title>e-fashion</title>
+    <title>Trublue</title>
 </head>
 
 <body>
-    <h1>Shop Shop till you drop</h1>
-    <nav class="navbar navbar-masthead navbar-default navbar-fixed-top">
+    <h1 class="centre">TRUBLUE HUMAN HAIR</h1>
+    <h4 class="centre">RELENTLESS PURSUIT OF FLAWLESS</h4>
+    <nav class="navbar">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -28,26 +31,29 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">e-Commerce</a>
+                <a href="/" class="navbar-brand" href="/">STORE HOME</a>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'profile' %}">Welcome, {{user}}</a>
+                    </br>
+                    <a href="{% url 'logout' %}">Logout</a>
+                    {% else %}
+                    <li><a href="{% url 'register' %}">Register</a></li>
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                    {% endif %}
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    {% if user.is_authenticated %}
-                    <li><a href="{% url 'profile' %}"><i class = 'fa fa-user-circle'></i>Welcome, {{user}}</a></li>
-                    <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> Logout</a></li>
-                    {% else %}
-                    <li><a href="{% url 'register' %}"><i class="fa fa-user-plus"></i> Register</a></li>
-                    <li><a href="{% url 'login' %}"><i class="fa fa-sign-in"></i> Login</a></li>
-                    {% endif %}
-                    <li><a href="{% url 'view_cart' %}"><i class="fa fa-user-plus"></i> Cart</a></li>
-                    <li><a href="{% url 'get_products' %}"><i class="fa fa-user-plus"></i> Products</a></li>
+                    
+                    
+                    <li><a href="{% url 'get_products' %}">ALL Products</a></li>
+                    <li><a href="{% url 'view_cart' %}">Cart</a></li>
+                    
                 </ul>
             </div>
         </div>
-        
-
+    
     </nav>
-
+</br>
 
  {% if messages %}
         <div class="alert alert-success">
@@ -59,12 +65,127 @@
         </div>
     {% endif %}
 
-
     <div class="container">
         <div class="row">
             {% block content %} {% endblock content %}
         </div>
     </div>
+    
+<section id="projects">
+  
+    <div class="container">
+   <div class="row">
+    <div class="col-md-4">
+  <div class="projects-container">
+   <article class="projects-item">
+    <img src="media/images/waterwave1.jpg" alt="img">
+    <div class="img-text">
+     <h1>WATER WAVE</h1>
+     <h6>soft touch</h6>
+    </div>
+    <div class="img-footer">
+     <div class="footer-icon">
+     
+     </div>
+     </div>
+ </div>
+ 
+   </article>
+  </div>
+  
+  <div class="col-md-4">
+   <div class="projects-container">
+   <article class="projects-item">
+    <img src="media/images/deep3.jpg" alt="img">
+    <div class="img-text">
+     <h1>DEEP WAVE</h1>
+     <h6>silk touch</h6>
+    </div>
+    <div class="img-footer">
+     <div class="footer-icon">
+     
+     </div>
+     </div>
+ </div>
+ 
+   </article>
+  </div>
+  <div class="col-md-4">
+  <div class="projects-container">
+   <article class="projects-item">
+    <img src="media/images/waterwave2.jpg" alt="img">
+    <div class="img-text">
+     <h1>LOOSE WAVE</h1>
+     <h6>silk touch</h6>
+    </div>
+    <div class="img-footer">
+     <div class="footer-icon">
+      
+     </div>
+     </div>
+ </div>
+   </article>
+  </div>
+  </br>
+  
+  
+    <div class="container">
+   <div class="row">
+   <div class="col-md-4">
+  <div class="projects-container">
+   <article class="projects-item">
+    <img src="media/images/kinky.jpg" alt="img">
+    <div class="img-text">
+     <h1>KINKY CURLY</h1>
+     <h6>silk touch</h6>
+    </div>
+    <div class="img-footer">
+     <div class="footer-icon">
+      </div>
+     </div>
+     </div>
+     </article>
+ </div>
+ </div>
+ </div>
+ 
+  <div class="col-md-4">
+  <div class="projects-container">
+   <article class="projects-item">
+    <img src="media/images/straight1.jpg" alt="img">
+    <div class="img-text">
+     <h1>STRAIGHT</h1>
+     <h6>silk touch</h6>
+    </div>
+    <div class="img-footer">
+     <div class="footer-icon">
+      </div>
+     </div>
+     </div>
+     </article>
+ </div>
+ 
+  <div class="col-md-4">
+  <div class="projects-container">
+   <article class="projects-item">
+    <img src="media/images/straight2.jpg" alt="img">
+    <div class="img-text">
+     <h1>BODY WAVE</h1>
+     <h6>silk touch</h6>
+    </div>
+    <div class="img-footer">
+     <div class="footer-icon">
+      </div>
+     </div>
+     </div>
+     </article>
+ </div>
+    
+  
+ </section>
+ 
+ 
+
 
 </body>
 

@@ -11,8 +11,8 @@
 
     <img src="{{MEDIA_URL}}{{p.image}}" width="300px" border-radius='50'></img>
     <li>Quantity: {{p.quantity}}</li> 
-    <li>${{p.price}} each</li>
-    <li>${{p.sub_total}} total</li>
+    <li>P{{p.price}} each</li>
+    <li>P{{p.sub_total}} total</li>
     
     <form action='{% url "remove_from_cart" %}' method="POST">
         {% csrf_token %}
@@ -24,7 +24,7 @@
 
 {% endfor %}
 
-<p><strong>Sub total: ${{ total }}</strong></p>
+<p><strong>Sub total: P{{ total }}</strong></p>
 
 
 <form action='{% url "checkout" %}'>

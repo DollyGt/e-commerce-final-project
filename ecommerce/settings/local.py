@@ -3,13 +3,6 @@ from .base import *
 
 SECRET_KEY='ovrny$2jc%ztbdihz%ob*k64za!$n(0pn8mj94m33@&-7%25ud'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
 #Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 

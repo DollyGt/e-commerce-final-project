@@ -34,8 +34,7 @@ def remove_item(request):
     cart = request.session.get('cart', {})
     
     if cart[id] > 1:
-        cart[id] = cart.get(id, 0) - 1
-    else:
-        del cart[id]
+        cart[id] = cart.get(id, 0) + 1
+    del cart[id]
     request.session['cart'] = cart
     return redirect('view_cart')

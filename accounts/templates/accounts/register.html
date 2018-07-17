@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+
 {% load bootstrap_tags %}
 {% load static from staticfiles %}
 {% block content %}
@@ -8,7 +8,7 @@
 <form method="POST">
     {% csrf_token %}
     {{ form | as_bootstrap }}
-    <input type="submit" value="Login"/>
+    <input type="submit" value="Register"/>
 </form>
 
 {% endblock content %}
