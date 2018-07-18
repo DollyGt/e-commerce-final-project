@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from home.views import get_index
+from home.views import get_index, search
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import RedirectView
@@ -29,7 +29,7 @@ from checkout import urls as checkout_urls
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', get_index, name='home'),
-    
+    path('', search, name='search'),
     path('accounts/', include(accounts_urls)),
     path('products/', include(products_urls)),
     path('cart/', include(cart_urls)),
