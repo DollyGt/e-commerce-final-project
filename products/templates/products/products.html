@@ -1,28 +1,51 @@
 {% extends 'base.html' %}
 {% load static from staticfiles %}
 {% load bootstrap_tags %}
+
 {% block content %}
 
-
-{% for product in items %}
-
-</hr>
-</br>
-<div class="col-md-4">
-    <img src="{{ MEDIA_URL}}{{product.image}}" width=200px></img> 
-    <ul>
-    <li>{{product.name}}</li>
-    <li>P{{product.price}}</li>
-    </ul>
+<form method="GET" action="{% url 'search' %}">
+       <input name="q" value="{{request.GET.q}}" placeholder="search for products..">
+       <button class="btn btn-success" type="submit" value="search">Search</button>
+    </form> 
     
-    <form method="POST" action="{% url 'add_to_cart' %}">
-        {% csrf_token %}
-        <input type="hidden" name="product_id" value="{{ product.id }}"/>
-        <input type="submit" value="Add To Cart"/>
-    </form>
-</br>
-</br>
-</div>
-</br>
-{% endfor %}
+
+
+<div class="container">
+        
+
+<div class="container-fluid">
+  <div class="row">
+    {% for product in items %}
+    <div class="col-sm-4 col-lg-4 col-md-4">
+      <div class="x_for_close">
+
+
+        <a href="{% url 'product_detail' product.id %}"><img src="{{ MEDIA_URL}}{{product.image}}" width="200px" height="180px"></img></a> 
+        <ul>
+        <li>{{product.name}}</li>
+        <li>P{{product.price}}</li>
+       </ul>
+            <form method="POST" action="{% url 'add_to_cart' %}">
+                {% csrf_token %}
+                <input type="hidden" name="product_id" value="{{ product.id }}"/>
+                <input type="submit" value="Add To Cart"/>
+            </form>
+            
+  </div> 
+  
+  
+  </div> 
+  {% endfor %}
+  </div> 
+  </div> 
+            
+        
+       </div> 
+       
+   
+
+ 
+
+
 {% endblock content %}

@@ -14,7 +14,7 @@ def add_to_cart(request):
 
     # Get the product we're adding
     id = request.POST['product_id']
-    phone = get_object_or_404(Product, pk=id)
+    items = get_object_or_404(Product, pk=id)
     
     # Get the current Cart
     cart = request.session.get('cart', {})
