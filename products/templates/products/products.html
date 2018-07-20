@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'home/base.html' %}
 {% load static from staticfiles %}
 {% load bootstrap_tags %}
 
@@ -19,19 +19,19 @@
     {% for product in items %}
     <div class="col-sm-4 col-lg-4 col-md-4">
       <div class="x_for_close">
-
+        <div class="thumbnail">
 
         <a href="{% url 'product_detail' product.id %}"><img src="{{ MEDIA_URL}}{{product.image}}" width="200px" height="180px"></img></a> 
-        <ul>
-        <li>{{product.name}}</li>
-        <li>P{{product.price}}</li>
-       </ul>
+       
+        <p>{{product.name}}</p>
+        <p>P{{product.price}}</p>
+       
             <form method="POST" action="{% url 'add_to_cart' %}">
                 {% csrf_token %}
                 <input type="hidden" name="product_id" value="{{ product.id }}"/>
                 <input type="submit" value="Add To Cart"/>
             </form>
-            
+            </div>
   </div> 
   
   

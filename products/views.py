@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Product
 from django.http import HttpResponse
+from reviews.forms import ReviewForm
 
 
 # Create your views here.
@@ -10,7 +11,8 @@ def get_products(request):
     
 def product_detail(request, id):
     items = get_object_or_404(Product, id=id)
-    return render(request, "products/productdetails.html",{'items': items})
+    form=ReviewForm()
+    return render(request, "products/productdetails.html",{'items': items, 'review_form': form} )
     
 def search(request):
     items = Product.objects.filter(name__icontains=request.GET['q'])

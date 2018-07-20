@@ -41,8 +41,7 @@ nav ul li a{
     padding-right: 20px;
     padding-left: 20px;
     background-color: #c0c0c0;
-    background-repeat: no-repeat;
-    background-size: cover;
+   
    
 }
 
@@ -71,9 +70,7 @@ nav ul li a{
 
 .img-text{
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-20%, -20%);
     text-align: center;
     opacity: 0;
     transition: opacity 4s;
@@ -127,10 +124,21 @@ img-footer{
     }
 }
 
-@media screen and (min-width:992px){
+@media screen and (min-width:992px) {
     .projects-container{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-column-gap: 1em;
     }
+}
+
+.indeximg {
+    
+    
+}
+
+.navbar-header {
+    margin-right: -15px;
+    margin-left: -15px;
+    background-color: black;
 }

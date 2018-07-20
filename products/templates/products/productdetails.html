@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'home/base.html' %}
 {% load static from staticfiles %}
 {% load bootstrap_tags %}
 
@@ -17,8 +17,32 @@
   </div>
 
   <div class="col-md-6">
-    <p>Description:{{ items.name }} {{product.description}}</p>  
+    <p><strong>{{ items.name }}</strong> </p>  
     <p>Price: P{{items.price}}</p>
+    <p><strong>Free shipping</strong> world wide via <strong>DHL</strong></p>
+    <p>Estimated Delivery Time: 11-22 days</p>
+ <p>
+     
+     <span class="text-warning">
+                {% for star in items.stars %}
+                <i class="fa fa-star"></i>
+                {% endfor %}
+                {% if items.needs_half_star %}
+                <i class="fa fa-star-half"></i>
+                {% endif %}                
+      </span>
+    
+    {% include "reviews/_show_reviews.html" %}
+       {% if user.is_authenticated %}
+       {% include "reviews/_add_review_form.html" %}
+       {% endif %}
+       
+</p>
+     
+     
+    </p>
+    
+    
     <div class="col-md-2">
           <form method="POST" action="{% url 'add_to_cart' %}">
                 {% csrf_token %}

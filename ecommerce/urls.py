@@ -27,7 +27,7 @@ from accounts import urls as accounts_urls
 from products import urls as products_urls
 from cart import urls as cart_urls
 from checkout import urls as checkout_urls
-
+from reviews import urls as reviews_urls
 
 
 
@@ -36,6 +36,7 @@ urlpatterns = [
     path('', get_index, name='home'),
     path('accounts/', include(accounts_urls)),
     path('products/', include(products_urls)),
+     path('reviews/', include(reviews_urls)),
     path('cart/', include(cart_urls)),
     # path('buy_now/', views.buy_now, name='buy_now'),
     path('search/', views.search, name='search'),
