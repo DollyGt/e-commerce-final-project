@@ -8,6 +8,8 @@ def view_cart(request):
     context = get_cart_items_and_total(cart)
     return render(request, "cart/cart.html", context)
 
+
+
   
   
 def add_to_cart(request):
@@ -28,13 +30,34 @@ def add_to_cart(request):
     # Redirect somewhere
     return redirect('get_products')
     
+
+    
 def remove_item(request): 
     id = request.POST['product_id']
     products = get_object_or_404(Product, pk=id)
     cart = request.session.get('cart', {})
     
     if cart[id] > 1:
-        cart[id] = cart.get(id, 0) + 1
-    del cart[id]
+        cart[id] = cart.get(id, 0) - 1
+    else:
+        del cart[id]
     request.session['cart'] = cart
     return redirect('view_cart')
+    
+def buynow(request):
+
+    # Get the product we're adding
+    id = request.POST['product_id']
+    items = get_object_or_404(Product, pk=id)
+    
+    # Get the current Cart
+    cart = request.session.get('cart', {})
+    
+    # Update the Cart
+    cart[id] = cart.get(id, 0) + 1
+    
+    # Save the Cart back to the session
+    request.session['cart'] = cart
+    
+    # Redirect somewhere
+    return redirect('checkout')

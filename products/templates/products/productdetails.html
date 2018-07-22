@@ -12,11 +12,17 @@
  
  {% if items.image %}
  
+ 
+ <div class="thumbnail">
+
+ 
   <img src="{{ MEDIA_URL}}{{items.image}}" width="400px"></img> 
   {% endif %}
   </div>
-
+  
+</div>
   <div class="col-md-6">
+
     <p><strong>{{ items.name }}</strong> </p>  
     <p>Price: P{{items.price}}</p>
     <p><strong>Free shipping</strong> world wide via <strong>DHL</strong></p>
@@ -32,31 +38,41 @@
                 {% endif %}                
       </span>
     
-    {% include "reviews/_show_reviews.html" %}
+  
+</p>
+     {% include "reviews/_show_reviews.html" %}
        {% if user.is_authenticated %}
        {% include "reviews/_add_review_form.html" %}
        {% endif %}
-       
-</p>
-     
      
     </p>
     
-    
-    <div class="col-md-2">
+   
           <form method="POST" action="{% url 'add_to_cart' %}">
                 {% csrf_token %}
                 <input type="hidden" name="product_id" value="{{items.id }}"/>
                 <input type="submit" value="Add To Cart"/>
             </form>
+            </br>
+            
+            <form method="POST" action="{% url 'add_to_cart' %}">
+                {% csrf_token %}
+                <input type="hidden" name="product_id" value="{{items.id }}"/>
+                <input type="submit" value="Buy Now"/>
+            </form>
+            
             </div>
       
       
     
     
      </div>
+     
+     
+     
+     
      </div>
-   </div>
+
     
         
         {% endblock content %}

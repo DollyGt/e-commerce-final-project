@@ -1,41 +1,59 @@
-{% extends 'home/base.html' %}
-{% block content %}
 
+{% extends 'home/base.html' %}
+{% load bootstrap_tags %}
+{% block content %}
 <h2>Cart</h2>
 
-{% if cart_items|length > 0 %}
-{% for p in cart_items %}
 
-<h5>{{p.name}}</h5>
-<ul>
-
-    <img src="{{MEDIA_URL}}{{p.image}}" width="150px" heiht="75px" border-radius='50'></img>
-    <li>Quantity: {{p.quantity}}</li> 
-    <li>P{{p.price}} each</li>
-    <li>P{{p.sub_total}} total</li>
+<table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Product</th>
+            <th>Product Description</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th></th>
+        </tr>
+        </thead>
+        
+        <tbody>
+        {% for p in cart_items %}    
+      <tr>
+          
+        
+        <td><img src="{{MEDIA_URL}}{{p.image}}" width="150px" height="120px" border-radius='50'></img></td>
+        <td>{{p.name}}</td>
+        <td>P{{p.price}}</td>
+        <td>{{p.quantity}}</td>
+        <td>{{p.sub_total}}</td>
+        <td> <form action='{% url "remove_from_cart" %}' method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="product_id" value="{{ p.id }}"/>
+                <button class="btn-sm btn-danger">Remove</button>
+                </form>
+        </td>
+    </tr>  
     
-    <form action='{% url "remove_from_cart" %}' method="POST">
-        {% csrf_token %}
-        <input type="hidden" name="product_id" value="{{ p.id }}"/>
-        <button class="btn-sm btn-danger">Remove</button>
-
-    </form>
-</ul>
-
-{% endfor %}
-
-<p><strong>Sub total: P{{ total }}</strong></p>
-
-
+   
+        <tr>
+            {% endfor %}
+            
+        
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><strong>Basket Total:</strong></td>
+            <td>P{{ total }}</td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
 <form action='{% url "checkout" %}'>
         {% csrf_token %}
         <button class='btn-sm btn-success'>Checkout</button>
 </form>
 
-{% else %}
-    <p>Your cart is empty!</p>
-{% endif %}
 
 
-{% endblock content %}
-
+{% endblock %}
