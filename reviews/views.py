@@ -8,15 +8,16 @@ def add_a_review(request):
     if not request.user.is_authenticated:
         return HttpResponseForbidden()
     
-    product_id = int(request.POST['product'])
-    items = get_object_or_404(Product, pk=product_id)
+    item_id = request.POST["item"]
+    print(item_id)
+    item = get_object_or_404(Product, pk=item_id)
     
     form = ReviewForm(request.POST)
     if form.is_valid():
         review = form.save(commit=False)
         review.reviewer = request.user
-        review.items = items
+        review.item = item
         review.save()
 
-    return redirect(reverse('product_detail', args=(product_id,)))
+    return redirect(reverse('product_detail', args=(item_id,)))
 

@@ -4,7 +4,7 @@
     </div>
     <div class="card-body">
 
-    {% for review in product.reviews_received.all %}
+    {% for review in item.reviews_received.all %}
     <p>{{review.content}}</p>
     <p><small >Rating 
       {% for star in review.stars %}
