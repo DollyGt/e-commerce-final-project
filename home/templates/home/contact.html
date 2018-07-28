@@ -1,0 +1,77 @@
+
+{% extends 'home/base.html' %}
+{% load static from staticfiles %}
+{% load bootstrap_tags %}
+
+{% block content %}
+
+
+    <body>
+        
+   
+<section id="contact">
+ <div class="container-fluid no-padding">
+  <div class="row">
+   <div class="col-md-6 my-3 align-self-center">
+    
+    <h2>Address</h2>
+   <h6>TruBlue Services</h6>
+   <h6>867 Walton Street</h6>
+    <h6>Walton Way</h6>
+     <h6>Maun Central</h6>
+     <h6>Maun</h6>
+     <h6>Botswana</h6>
+     
+     <h6>Phone +267 66....</h6>
+      <h6>Phone +267 66....</h6>
+       <h6>Fax +267 66....</h6>
+        <h6>Email info@trublue.bw.co</h6>
+    </div>
+   </div>
+  
+     
+   <!-----input group 1----->
+   <div class="col-md-6 my-3">
+    <div class="card text-center">
+     <div class="card-header">
+      <h1 class="text-uppercase">contact Us</h1>
+     </div>
+     <div class="card-body">
+      <form method="POST">
+           {% csrf_token %}
+
+    
+        <div class="input-group-prepend">
+         <span class="input-group-text" id="input-text"><i class="fas fa-user"></i></span>
+         <input type="text" id="text" class="form-control form-control-lg" placeholder="name..." required>
+          
+        </div>
+       
+     </div>
+     <div class="card-body">
+     
+        <div class="input-group-prepend">
+         <span class="input-group-text" id="input-phone"><i class="fas fa-phone"></i></span>
+         <input type="text" id="phone" class="form-control form-control-lg" placeholder="phone..." required>
+          
+        </div>
+        <!-----input group 3------->
+    </div>
+     <div class="card-body">
+    
+        <div class="input-group-prepend">
+         <span class="input-group-text" id="input-email"><i class="fas fa-envelope"></i></span>
+         <input type="email" id="text" class="form-control form-control-lg" placeholder="email..." required>
+          
+        </div>
+        </div>
+        </br>
+        <button type="submit" class="btn btn-block btn-lg text-uppercase contact-btn"><i class="far fa-hand-point-right mr-2"></i>send</button>
+      </form> 
+ 
+</section>
+
+ </body>
+
+
+{% endblock content %}

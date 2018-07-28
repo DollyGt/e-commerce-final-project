@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from products import views
 from cart import urls as buynow_urls
-from home.views import get_index
+from home.views import get_index, contact
 from django.conf.urls import url, include
 from accounts import urls as accounts_urls
 from products import urls as products_urls
@@ -33,6 +33,7 @@ from django.views.generic import RedirectView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', get_index, name='home'),
+    path('contact/', contact, name='contact'),
     path('accounts/', include(accounts_urls)),
     path('products/', include(products_urls)),
     path('checkout/', include(buynow_urls)),

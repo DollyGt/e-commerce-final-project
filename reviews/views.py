@@ -9,7 +9,6 @@ def add_a_review(request):
         return HttpResponseForbidden()
     
     item_id = request.POST["item"]
-    print(item_id)
     item = get_object_or_404(Product, pk=item_id)
     
     form = ReviewForm(request.POST)

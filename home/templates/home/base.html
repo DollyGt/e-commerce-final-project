@@ -56,10 +56,12 @@
                 
                 <ul class="nav navbar-nav navbar-center">
                    
-                    <li><a href="{% url 'get_products' %}">Products</a></li>
-                     <li><a href="#">Top Selling</a></li>
+                    <li><a href="{% url 'get_products' %}">All Products</a></li>
+                    {% for category in categories %}
+                    <li><a href="{% url 'categories' category %}">{{items.category}}</a></li>
+                    {% endfor %}
                      <li><a href="{% url 'view_cart' %}">Cart</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
                 </ul>
         
                

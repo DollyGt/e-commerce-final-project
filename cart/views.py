@@ -3,6 +3,8 @@ from products.models import Product
 from .utils import get_cart_items_and_total
 
 # Create your views here.
+
+
 def view_cart(request):
     cart = request.session.get('cart', {})
     context = get_cart_items_and_total(cart)
@@ -44,6 +46,7 @@ def remove_item(request):
     request.session['cart'] = cart
     return redirect('view_cart')
     
+
 def buynow(request):
 
     # Get the product we're adding
@@ -60,4 +63,4 @@ def buynow(request):
     request.session['cart'] = cart
     
     # Redirect somewhere
-    return redirect('checkout')
+    return redirect('view_cart')

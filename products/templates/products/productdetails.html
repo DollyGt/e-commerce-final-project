@@ -6,68 +6,50 @@
  
  
 <div class="container">
- <div class="row">
- <div class="col-md-6">
-     
- 
- {% if items.image %}
- 
- 
- <div class="thumbnail">
-
- 
-  <img src="{{ MEDIA_URL}}{{items.image}}" width="400px"></img> 
-  {% endif %}
-  </div>
-  
-</div>
-  <div class="col-md-6">
-
-    <p><strong>{{ items.name }}</strong> </p>  
-    <p>Price: P{{items.price}}</p>
-    <p><strong>Free shipping</strong> world wide via <strong>DHL</strong></p>
-    <p>Estimated Delivery Time: 11-22 days</p>
- <p>
-     
-     <span class="text-warning">
-                {% for star in items.stars %}
-                <i class="fa fa-star"></i>
-                {% endfor %}
-                {% if items.needs_half_star %}
-                <i class="fa fa-star-half"></i>
-                {% endif %}                
-      </span>
-    
-  
-</p>
-<p>
-     {% include "reviews/_show_reviews.html" %}
-       {% if user.is_authenticated %}
-       {% include "reviews/_add_review_form.html" %}
-       {% endif %}
-     
-    </p>
-    
-   
-          <form method="POST" action="{% url 'add_to_cart' %}">
-                {% csrf_token %}
-                <input type="hidden" name="product_id" value="{{items.id }}"/>
-                <input type="submit" value="Add To Cart"/>
-            </form>
-            </br>
-            
-            <form method="POST" action="{% url 'add_to_cart' %}">
-                {% csrf_token %}
-                <input type="hidden" name="product_id" value="{{items.id }}"/>
-                <input type="submit" value="Buy Now"/>
-            </form>
-            
+        <div class="row">
+            <div class="col-md-6">
+                    {% if items.image %}
+                <div class="thumbnail">
+                    <img src="{{ MEDIA_URL}}{{items.image}}" width="400px"></img> 
+                    {% endif %}
+                </div>
             </div>
-      
-      
-    
-    
-     </div>
+            <div class="col-md-6">
+            
+                <p><strong>{{ items.name }}</strong> </p>  
+                <p>Price: P{{items.price}}</p>
+                <p><strong>Free shipping</strong> world wide via <strong>DHL</strong></p>
+                <p>Estimated Delivery Time: 11-22 days</p>
+                <p>
+                 <span class="text-warning">
+                            {% for star in items.stars %}
+                            <i class="fa fa-star"></i>
+                            {% endfor %}
+                            {% if items.needs_half_star %}
+                            <i class="fa fa-star-half"></i>
+                            {% endif %}                
+                  </span>
+                
+              
+                 {% include "reviews/_show_reviews.html" %}
+                   {% if user.is_authenticated %}
+                   {% include "reviews/_add_review_form.html" %}
+                   {% endif %}
+                 
+                </p>
+                        <form method="POST" action="{% url 'add_to_cart' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="product_id" value="{{items.id }}"/>
+                            <input type="submit" value="Add To Cart"/>
+                        </form>
+                        </br>
+                        <form method="POST" action="{% url 'buynow' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="product_id" value="{{items.id }}"/>
+                            <input type="submit" value="Buy Now"/>
+                        </form>
+            </div>
+        </div>
      
      
      
