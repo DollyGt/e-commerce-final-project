@@ -3,11 +3,10 @@
 {% load bootstrap_tags %}
 
 {% block content %}
-
 <form method="GET" action="{% url 'search' %}">
-       <input name="q" value="{{request.GET.q}}" placeholder="search for products..">
-       <button class="btn btn-success" type="submit" value="search">Search</button>
-    </form> 
+  <input name="q" value="{{request.GET.q}}" placeholder="search for products..">
+  <button class="btn btn-success" type="submit" value="search">Search</button>
+</form>
   
   
 <section id="projects">
@@ -17,51 +16,67 @@
   <div class="col-md-4">
      <div class="projects-container">
       <article class="projects-item">
-        <img src="media/images/waterwave1.jpg" width="300px" height="200px" alt="img">
-        <div class="img-text">
+        <img src="media/images/waterwave1.jpg" width="200px" height="180px" alt="img"></img>
+        
+        <div class="img-footer">
+     <div class="footer-icon">
+     
+      </div>
+    
+    </div> 
+    </article>
+    <div class="img-text">
            <h1>WATER WAVE</h1>
            <h6>soft touch</h6>
         </div>
-      </div>
-      </article>
    </div>
-  
+  </div>
  
   <div class="col-md-4">
    <div class="projects-container">
    <article class="projects-item">
-    <img src="media/images/deep3.jpg" width="300px"  height="200px" alt="img">
+    <img src="media/images/deep3.jpg" width="200px"  height="180px" alt="img"></img>
+    
+    <div class="img-footer">
+     <div class="footer-icon">
+    </div>
+    
+    </div> 
+    </article>
     <div class="img-text">
      <h1>DEEP WAVE</h1>
      <h6>silk touch</h6>
     </div>
-    <div class="img-footer">
-     <div class="footer-icon">
-     </div>
-     </div>
- </div>
-   </article>
+   </div>
   </div>
-  
+ 
+ 
+ 
   <div class="col-md-4">
   <div class="projects-container">
    <article class="projects-item">
-    <img src="media/images/waterwave2.jpg" width="300px" height="200px" alt="img"></img>
+    <img src="media/images/waterwave2.jpg" width="200px" height="180px" alt="img"></img>
+    
+    <div class="img-footer">
+     <div class="footer-icon">
+    </div>
+    
+    </div> 
+    </article>
     <div class="img-text">
      <h1>LOOSE WAVE</h1>
      <h6>silk touch</h6>
     </div>
-    <div class="img-footer">
-     <div class="footer-icon">
-     </div>
-     </div>
- </div>
-   </article>
+   </div>
   </div>
+  
   
   </div>
  </div>
 </section>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+
  <!--<div class="container-fluid info p-3" id="top-icons">-->
  <!-- <div class="row">-->
  <!--  <div class="col d-flex justify-content-between align-items-baseline flex-wrap">-->

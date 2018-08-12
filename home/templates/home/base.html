@@ -27,11 +27,7 @@
             <img src="https://s3-eu-west-1.amazonaws.com/dovedove-dolly/media/images/logo.jpg" width="150px">
     </div>
     <h4 class="centre">RELENTLESS PURSUIT OF FLAWLESS</h4>
- {% if user.is_authenticated %}
- Hi, {{user}}
-  {% else %}  
-       
-    {% endif %}
+ 
        <a href="{% url 'profile' %}">Profile</a> 
         {% if user.is_authenticated %}
                     <a href="{% url 'profile' %}"><i class = 'fa fa-user-circle'></i>Hi, {{user}}</a>
