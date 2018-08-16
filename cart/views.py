@@ -9,10 +9,6 @@ def view_cart(request):
     cart = request.session.get('cart', {})
     context = get_cart_items_and_total(cart)
     return render(request, "cart/cart.html", context)
-
-
-
-  
   
 def add_to_cart(request):
 
@@ -34,7 +30,6 @@ def add_to_cart(request):
     return redirect('get_products')
     
 
-    
 def remove_item(request): 
     id = request.POST['product_id']
     products = get_object_or_404(Product, pk=id)
