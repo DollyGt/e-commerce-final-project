@@ -18,13 +18,14 @@ def add_to_cart(request):
 
     # Get the product we're adding
     id = request.POST['product_id']
+    quantity = int(request.POST['quantity'])
     items = get_object_or_404(Product, pk=id)
     
     # Get the current Cart
     cart = request.session.get('cart', {})
     
     # Update the Cart
-    cart[id] = cart.get(id, 0) + 1
+    cart[id] = cart.get(id, 0) + quantity
     
     # Save the Cart back to the session
     request.session['cart'] = cart

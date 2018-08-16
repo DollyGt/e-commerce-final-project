@@ -59,6 +59,39 @@ nav ul li a{
     overflow: hidden;
     margin: 20px 20px;
 }
+.product h4 {
+    min-height: 2em;
+}
+.product {
+    text-align: center;
+}
+.product i {
+    color: #f47c3c;
+    font-style: normal;
+    margin-top: 12px;
+}
+.btn.read-more {
+    border-radius: 0px;
+    display: block;
+    background-color: transparent;
+    color: black;
+    transition: all ease-in-out 0.3s;
+}
+.btn.read-more:hover {
+    background-color: #ee3780;
+    color: white;
+}
+.btn.add-buy {
+    border-radius: 0px;
+    display: block;
+    background-color: #ee3780;
+    width: 50%;
+    text-align: center;
+    color: white;
+}
+input.quantity {
+    width: 50%;
+}
 
 #projects img{
     width: 800px;

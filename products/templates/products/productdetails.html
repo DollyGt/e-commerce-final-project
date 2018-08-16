@@ -20,7 +20,21 @@
                 <p>Price: P{{items.price}}</p>
                 <p><strong>Free shipping</strong> world wide via <strong>DHL</strong></p>
                 <p>Estimated Delivery Time: 11-22 days</p>
-                <p>
+
+                        <form method="POST" action="{% url 'add_to_cart' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="product_id" value="{{items.id }}"/>
+                            <input  class="form-control quantity" type="number" name="quantity" value="1"/>
+                            <br><br>
+                            <input class="btn add-buy" type="submit" value="Add To Cart"/>
+                        </form>
+                        </br>
+                        <form method="POST" action="{% url 'buynow' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="product_id" value="{{items.id }}"/>
+                            <input class="btn add-buy" type="submit" value="Buy Now"/>
+                        </form>
+                                        <p>
                  <span class="text-warning">
                             {% for star in items.stars %}
                             <i class="fa fa-star"></i>
@@ -37,17 +51,6 @@
                    {% endif %}
                  
                 </p>
-                        <form method="POST" action="{% url 'add_to_cart' %}">
-                            {% csrf_token %}
-                            <input type="hidden" name="product_id" value="{{items.id }}"/>
-                            <input type="submit" value="Add To Cart"/>
-                        </form>
-                        </br>
-                        <form method="POST" action="{% url 'buynow' %}">
-                            {% csrf_token %}
-                            <input type="hidden" name="product_id" value="{{items.id }}"/>
-                            <input type="submit" value="Buy Now"/>
-                        </form>
             </div>
         </div>
      
