@@ -3,59 +3,51 @@
 {% load bootstrap_tags %}
 
 {% block content %}
- 
- 
+<br><br>
 <div class="container">
         <div class="row">
-            <div class="col-md-6">
-                    {% if items.image %}
-                <div class="thumbnail">
-                    <img src="{{ MEDIA_URL}}{{items.image}}" width="400px"></img> 
-                    {% endif %}
-                </div>
+            <div class="col-sm-6">
+                {% if items.image %}
+                    <img class="img-responsive" src="{{ MEDIA_URL}}{{items.image}}"></img>
+                {% endif %}
             </div>
-            <div class="col-md-6">
-            
-                <p><strong>{{ items.name }}</strong> </p>  
-                <p>Price: P{{items.price}}</p>
+            <div class="col-sm-6">
+                <h1><strong>{{ items.name }}</strong></h1>  
+                <p>Price: <span class="price">P {{items.price}}</span></p>
+              <p class="ratings">
+              {% if items.stars %} 
+                  {% for star in items.stars %}
+                      <i class="fa fa-star"></i> 
+                  {% endfor %} 
+                  {% if items.needs_half_star %}
+                      <i class="fa fa-star-half"></i> 
+                  {% endif %}
+              {% endif %}
+              </p>
                 <p><strong>Free shipping</strong> world wide via <strong>DHL</strong></p>
                 <p>Estimated Delivery Time: 11-22 days</p>
 
-                        <form method="POST" action="{% url 'add_to_cart' %}">
-                            {% csrf_token %}
-                            <input type="hidden" name="product_id" value="{{items.id }}"/>
-                            <input  class="form-control quantity" type="number" name="quantity" value="1"/>
-                            <br><br>
-                            <input class="btn add-buy" type="submit" value="Add To Cart"/>
-                        </form>
-                        </br>
-                        <form method="POST" action="{% url 'buynow' %}">
-                            {% csrf_token %}
-                            <input type="hidden" name="product_id" value="{{items.id }}"/>
-                            <input class="btn add-buy" type="submit" value="Buy Now"/>
-                        </form>
-                                        <p>
-                 <span class="text-warning">
-                            {% for star in items.stars %}
-                            <i class="fa fa-star"></i>
-                            {% endfor %}
-                            {% if items.needs_half_star %}
-                            <i class="fa fa-star-half"></i>
-                            {% endif %}                
-                  </span>
-                
-              
-                 {% include "reviews/_show_reviews.html" %}
-                   {% if user.is_authenticated %}
-                   {% include "reviews/_add_review_form.html" %}
-                   {% endif %}
-                 
-                </p>
+                    <form method="POST" action="{% url 'add_to_cart' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="product_id" value="{{items.id }}"/>
+                        <input  class="form-control quantity" type="number" name="quantity" value="1"/>
+                        <br><br>
+                        <input class="btn add-buy" type="submit" value="Add To Cart"/>
+                    </form>
+                    </br>
+                    <form method="POST" action="{% url 'buynow' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="product_id" value="{{items.id }}"/>
+                        <input class="btn add-buy" type="submit" value="Buy Now"/>
+                    </form>
             </div>
         </div>
-     
-     
-     
+     <div class="col-sm-12">
+        {% include "reviews/_show_reviews.html" %}
+        {% if user.is_authenticated %}
+            {% include "reviews/_add_review_form.html" %}
+        {% endif %}
+     </div>
      
      </div>
 

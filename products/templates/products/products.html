@@ -3,52 +3,55 @@
 {% load bootstrap_tags %}
 
 {% block content %}
-
-<form method="GET" action="{% url 'search' %}">
-       <input name="q" value="{{request.GET.q}}" placeholder="search for products..">
-       <button class="btn btn-success" type="submit" value="search">Search</button>
-</form>
-</br>
+<br><br>
 <div class="container">
-<div class="container-fluid">
   <div class="row">
     {% for product in items %}
-    <div class="col-sm-3 product"></br>
-      <div class="x_for_close">
-              <div class="thumbnail">
-              <a href="{% url 'product_detail' product.id %}"><img src="{{ MEDIA_URL}}{{product.image}}" width="100%"></img>
-              <h4>{{product.name}}</h4>
-              </a>
-              
-              <p>P {{product.price}}</p>
-              <a href="{% url 'product_detail' product.id %}" class="btn read-more">
-                Read More
-              </a>
-             
-              <p class="ratings">
-              {% if product.reviews_received.all %}
-              
-              {% endif %} 
-              {% if product.stars %} 
-              {% for star in product.stars %}
-              <i class="fa fa-star"></i> 
-              {% endfor %} 
-              {% if product.needs_half_star %}
-              <i class="fa fa-star-half"></i> 
-              {% endif %} <br>
-              <span class="">{{product.reviews_received.all|length}} Review</span>
-              <span>{{product.average_rating}} avg rating {% else %}</span>
-              <p><br>No reviews yet</p>
-              {% endif %}
-            </p>
-          </div>
-      </div> 
-    </div> 
-    {% if forloop.counter == 4 %}
-    </div><div class="row">
+    <div class="col-sm-3 product">
+      <div class="product-inner">
+        <a class="text-center" href="{% url 'product_detail' product.id %}">
+          <img src="{{ MEDIA_URL}}{{product.image}}" width="100%"></img>
+          <h4>{{product.name}}</h4>
+        </a>
+        <p class="ratings">
+        {% if product.stars %} 
+        {% for star in product.stars %}
+        <i class="fa fa-star"></i> 
+        {% endfor %} 
+        {% if product.needs_half_star %}
+        <i class="fa fa-star-half"></i> 
+        {% endif %} 
+        
+        <br>
+        <span class="">{{product.reviews_received.all|length}} 
+          {% if product.reviews_received.all|length == 1 %}
+          Review
+          {% elif product.reviews_received.all|length > 1 %}
+          Reviews
+          {% endif %} 
+        </span>
+        <span>{{product.average_rating}} avg rating </span>
+        </p>
+        {% else %}
+        <p class="ratings">
+          <i class="fa fa-star-o"></i>
+          <i class="fa fa-star-o"></i>
+          <i class="fa fa-star-o"></i>
+          <br><span>No reviews yet</span></p>
+        {% endif %}
+        <p>Price: <span class="price">P {{product.price}}</span></p>
+        <a href="{% url 'product_detail' product.id %}" class="btn read-more">
+          Read More
+        </a>
+      </div>
+    </div>
+    
+    
+    {% if forloop.counter|divisibleby:4 %}
+      </div><div class="row">
     {% endif%}
   {% endfor %}
-  </div> 
-  </div> 
-</div> 
+  </div>
+  </div>
+
 {% endblock content %}

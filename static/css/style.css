@@ -1,76 +1,24 @@
-
-.centre{
-    text-align: center;
-}
-
-.centre:h1{
-    font-weight: 900;
-    color:#d3325f;
-}
-
-.navbar{
-    background-color:#000000; 
-}
-
-nav ul{
-    list-style-type: none;
-    /*background-color:#c9c1ac;*/
-    color: #d3325f;
-    font-size: 50px;
-    text-align: center;
-}
-
-nav ul li a{
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    font-size: 80px;
-    padding: 15px 15px;
-    color: #FFFFFF;
-}
-
-
-/*#projects .title-text{*/
-/*    color: #d3325f;*/
-/*    text-align: center;*/
-/*}*/
-
 #projects{
     margin-top: 25px;
     padding-right: 20px;
     padding-left: 20px;
     background-color: #c0c0c0;
-   
-   
 }
-
 .projects-container{
- 
     max-width:90vw;
-    
     margin-left: -15px;
-    /*margin: 0 auto;*/
 }
-
 .projects-item{
     position: relative;
-    background: linear-gradients(rgba(0,0,0,0.8), rgba(0,0,0,0.8));
     color: #e0e2db;
     overflow: hidden;
     margin: 20px 20px;
 }
 .product h4 {
-    min-height: 2em;
-}
-.product {
-    text-align: center;
-}
-.product i {
-    color: #f47c3c;
-    font-style: normal;
-    margin-top: 12px;
+    min-height: 2.2em;
 }
 .btn.read-more {
+    border-top: 1px solid #ee3780;
     border-radius: 0px;
     display: block;
     background-color: transparent;
@@ -89,18 +37,100 @@ nav ul li a{
     text-align: center;
     color: white;
 }
-input.quantity {
+.quantity {
     width: 50%;
 }
 
-#projects img{
-    width: 800px;
-    
-    width: 100%;
-    min-height: 100%;
-    display: block;
-    transition: transform 5s;
+.navbar-main {
+    background-color: #EB3C81;
+    border-radius: 0px;
 }
+.navbar-main a {
+    color: white;
+}
+.navbar-main a:hover {
+    background-color: black;
+}
+.nav>li>a {
+    transition: all ease-in-out 0.3s;
+}
+.nav>li>a:hover, .nav>li>a:focus {
+    background-color: #bc3067;
+}
+#top-bar {
+    background-color: #EB3C81;
+    color: white;
+    font-size: 13px;
+    padding: 10px 0px;
+}
+#top-bar a {
+    color: white;
+}
+body {
+font-family: 'Oswald', sans-serif;
+}
+#header img {
+    margin: 20px auto;
+    max-width: 70%;
+}
+#header h1 {
+    margin-top: 30px;
+    font-family: 'Lobster', cursive;
+    color: #EB3C81;
+    font-size: 55px;
+}
+#header h4 {
+    color: #EB3C81;
+    
+}
+.btn, .form-control {
+    border-radius: 0px !important;
+}
+.btn-search {
+    background-color: #bc3067;
+    transition: all ease-in-out 0.5s;
+    color: white;
+}
+.btn-search:hover {
+    background-color: #8d244d;
+}
+.navbar-form .form-group {
+    positon: relative;
+    top: 2px;
+    left: 2px;
+    margin-top: 2px;
+}
+.nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
+    border-color: #dfd7ca;
+    background-color: #bc3067;
+}
+#footer {
+    background-color: #EB3C81;
+    margin-top: 50px;
+    min-height: 150px;
+    border-bottom: 30px solid #bc3067;
+    color: white;
+}
+p.ratings i{
+    color: yellow;
+}
+h1, h2, h3, h4 {
+    color: #EB3C81;
+}
+.price {
+    color: #EB3C81;
+}
+.product-inner {
+    border: 1px solid #ddd;
+    margin-bottom: 30px;
+    box-shadow: rgba(0,0,0,0.02) 0px 0px 15px;
+}
+.product-inner h4, .product-inner p {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+
 
 .img-text{
     /*position: absolute;*/
@@ -110,7 +140,6 @@ input.quantity {
     /*transition: opacity 4s;*/
     color: red;
 }
-
 img-footer{
     display: flex;
     justify-content: space-between;
@@ -124,72 +153,20 @@ img-footer{
     color: #e6af2e;
     transition: opacity 4s;
 }
-
 .img-text h1{
     font-size: 30px;
     margin-bottom: 10px;
-    
 }
-
 .img-text h6{
     font-size:15px;
 }
-
 .projects-item:hover img{
     opacity: 0.4;
     transform: scale(1.3);
 }
-
 .projects-item:hover .img-text{
     opacity: 1;
 }
-
 .projects-item:hover .img-footer{
     opacity: 1;
-}
-
-
-
-/*@media screen and (min-width:576px){*/
-/*    .projects-container{*/
-/*        display: grid;*/
-       
-/*        grid-column-gap: 1em;*/
-/*    }*/
-/*}*/
-
-/*@media screen and (min-width:992px) {*/
-/*    .projects-container{*/
-/*        display: grid;*/
-       
-/*        grid-column-gap: 1em;*/
-/*    }*/
-/*}*/
-
-.indeximg {
-    
-    
-}
-
-.navbar-header {
-    margin-right: -15px;
-    margin-left: -15px;
-    background-color: black;
-}
-
-@media (min-width: 992px){
-.container {
-    width: 100%;
-}
-}
-
-.col-md-4 {
-     padding-right: 0px;
-}
-
-
-.container-fluid {
-    padding-left: 0;
-    
-    
 }
