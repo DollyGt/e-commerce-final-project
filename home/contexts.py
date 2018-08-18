@@ -1,6 +1,5 @@
-from products.models import Product
+from categories.models import Category
 
-def get_menu_items(request):
-    all_items = Product.objects.all()
-    cat_set = list(set([(category.category).lower() for category in all_items]))
-    return {'categories': cat_set }
+def get_menu_items():
+    all_items = Category.objects.all()
+    return all_items

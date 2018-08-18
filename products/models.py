@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models import Avg
+from categories.models import Category
 
 # Create your models here.
 class Product(models.Model):
@@ -7,7 +8,7 @@ class Product(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image = models.ImageField(upload_to='images')
-    category = models.CharField(max_length=256, blank=True)
+    categories = models.ManyToManyField( Category, related_name='products_in_cat')
     
     @property
     def average_rating(self):

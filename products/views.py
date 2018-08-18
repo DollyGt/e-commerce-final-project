@@ -3,6 +3,7 @@ from .models import Product
 from django.http import HttpResponse
 from reviews.forms import ReviewForm
 from reviews.models import Review
+from categories.models import Category
 
 
 # Create your views here.
@@ -11,9 +12,11 @@ def get_products(request):
     return render(request, "products/products.html", {'items': items})
     
 def get_cat_products(request, category):
-    items = Product.objects.filter(category=category)
-    return render(request, 'products/products.html', {'items': items})    
-
+    items = Product.objects.all()
+    text = "Displaying cat name : %s"%category
+    return HttpResponse(text)
+    #return render(request, 'products/products.html', {'items': items})
+    
 def product_detail(request, id):
     items = get_object_or_404(Product, id=id)
     form=ReviewForm()

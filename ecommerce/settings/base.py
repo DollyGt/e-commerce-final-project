@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'products',
     'cart',
     'checkout',
-    'reviews'
+    'reviews',
+    'categories'
 ]
 
 MIDDLEWARE = [
@@ -71,10 +72,12 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+                'processor.categories'
             ],
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'ecommerce.wsgi.application'
 
