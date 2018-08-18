@@ -6,5 +6,4 @@ urlpatterns = [
    path('<int:id>/', product_detail, name='product_detail'),
    path('search/', search, name='search'),
    path('categories/<int:id>/', get_cat_products, name="categories"),
-   #path('categories/<str:category>', get_cat_products, name="categories"),
    ]

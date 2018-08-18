@@ -3,87 +3,70 @@
 {% load bootstrap_tags %}
 
 {% block content %}
-<section id="projects">
-  <div class="container">
-    <div class="row">
-    
-  <div class="col-md-4">
-     <div class="projects-container">
-      <article class="projects-item">
-        <img src="media/images/waterwave1.jpg" width="200px" height="180px" alt="img"></img>
-        
-        <div class="img-footer">
-     <div class="footer-icon">
-     
+<br><br>
+<div class="container">
+  <div class="row">
+   
+   
+ <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    {% for product in items %}
+    {% if forloop.counter0 == 0%}
+    <li data-target="#myCarousel" data-slide-to="{{forloop.counter0}}" class="active"></li>
+    {% else %}
+    <li data-target="#myCarousel" data-slide-to="{{forloop.counter0}}"></li>
+    {% endif %}
+    {% endfor %}    
+
+  </ol>
+  <div class="carousel-inner">
+  {% for product in items %}
+   {% if forloop.counter == 1%}
+    <div class="item active">
+   {% else %}
+    <div class="item">
+   {% endif %}
+     <div class="item-inner">
+      <img src="{{ MEDIA_URL}}{{product.image}}" width="100%"></img>
+      <div class="overlay">
+        <a class="text-center" href="{% url 'product_detail' product.id %}">
+          <h4>{{product.name}}</h4>
+        </a>
+        {% if product.discount > 0 %}
+            <p class="other">{{product.discount}}% OFF <span class="was">Was {{product.priceOld}}</span></p>
+            <h5>Now Only {{product.price}}</h5>
+        {% endif %}
+        <p class="ratings">
+        {% if product.stars %} 
+         {% for star in product.stars %}
+         <i class="fa fa-star"></i> 
+         {% endfor %} 
+         {% if product.needs_half_star %}
+         <i class="fa fa-star-half"></i>
+         {% endif %}
+        {% endif %}
+        </p>
       </div>
-    
-    </div> 
-    </article>
-    <div class="img-text">
-           <h1>WATER WAVE</h1>
-           <h6>soft touch</h6>
-        </div>
-   </div>
-  </div>
- 
-  <div class="col-md-4">
-   <div class="projects-container">
-   <article class="projects-item">
-    <img src="media/images/deep3.jpg" width="200px"  height="180px" alt="img"></img>
-    
-    <div class="img-footer">
-     <div class="footer-icon">
+     </div>
+     
     </div>
     
-    </div> 
-    </article>
-    <div class="img-text">
-     <h1>DEEP WAVE</h1>
-     <h6>silk touch</h6>
-    </div>
-   </div>
+  {% endfor %}
   </div>
- 
+  <!-- Wrapper for slides -->
 
-  <div class="col-md-4">
-  <div class="projects-container">
-   <article class="projects-item">
-    <img src="media/images/waterwave2.jpg" width="200px" height="180px" alt="img"></img>
-    
-    <div class="img-footer">
-     <div class="footer-icon">
-    </div>
-    
-    </div> 
-    </article>
-    <div class="img-text">
-     <h1>LOOSE WAVE</h1>
-     <h6>silk touch</h6>
-    </div>
-   </div>
-  </div>
-  
-  
-  </div>
- </div>
-</section>
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+</div>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-
- <!--<div class="container-fluid info p-3" id="top-icons">-->
- <!-- <div class="row">-->
- <!--  <div class="col d-flex justify-content-between align-items-baseline flex-wrap">-->
- <!--   <div class="info-icons p-2">-->
- <!--    <a href="#" class="mr-2 primary-color"><i class="fab fa-facebook fa-2x"></i></a>-->
- <!--    <a href="#" class="mr-2 primary-color"><i class="fab fa-instagram fa-2x"></i></a>-->
- <!--    <a href="#" class="mr-2 primary-color"><i class="fab fa-twitter fa-2x"></i></a>-->
- <!--    <a href="#" class="mr-2 primary-color"><i class="fab fa-snapchat fa-2x"></i></a>-->
- <!--   </div>-->
- <!--   <h5 class="primary-color p-2 text-uppercase">6395 Jubilee Street, Palapye Central, Palapye, Botswana</h5>-->
- <!--   <p>Contact: +267 2614177</p>-->
- <!--   <p class="primary-color p-2 text-uppercase">&copy;copyright 2018</p>-->
- <!--  </div>-->
- <!-- </div>-->
- <!--</div>-->
-  
-{% endblock %}
+{% endblock content %}

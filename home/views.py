@@ -6,7 +6,8 @@ from products.models import Product
 
 # Create your views here.
 def get_index(request):
-    return render(request, "home/index.html")
+    items = Product.objects.filter(featured = True)
+    return render(request, "home/index.html", {'items': items})
 
 
 def contact(request):
