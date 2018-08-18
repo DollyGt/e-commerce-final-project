@@ -11,11 +11,10 @@ def get_products(request):
     items = Product.objects.all()
     return render(request, "products/products.html", {'items': items})
     
-def get_cat_products(request, category):
-    items = Product.objects.all()
-    text = "Displaying cat name : %s"%category
-    return HttpResponse(text)
-    #return render(request, 'products/products.html', {'items': items})
+def get_cat_products(request, id):
+    cat = get_object_or_404(Category, id=id)
+    items = cat.products.all()
+    return render(request, 'products/products.html', {'items': items})
     
 def product_detail(request, id):
     items = get_object_or_404(Product, id=id)

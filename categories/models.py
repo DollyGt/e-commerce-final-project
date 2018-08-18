@@ -4,7 +4,7 @@ from products.models import Product
 class Category(models.Model):
     name = models.CharField(max_length=254, default='')
     description = models.TextField()
-    products = models.ManyToManyField(Product, related_name='in_categories')
+    products = models.ManyToManyField(Product, related_name='products')
     
     @property
     def get_all(self):
