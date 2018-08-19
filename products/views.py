@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from reviews.forms import ReviewForm
 from reviews.models import Review
 from categories.models import Category
+from django.contrib import messages
 
 # Create your views here.
 def get_products(request):

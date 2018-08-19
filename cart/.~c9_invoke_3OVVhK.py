@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, HttpResponse, redirect
 from products.models import Product
 from .utils import get_cart_items_and_total
-from django.contrib import messages
+
 
 # Create your views here.
 
@@ -25,21 +25,19 @@ def add_to_cart(request):
     cart[id] = cart.get(id, 0) + quantity
     
     # Save the Cart back to the session
-    request.session['cart'] = cart
-    msg = "%s is added to cart."% items.name
-    messages.error(request, msg)
+    messages.error(request, "Your item is added to your cart.")
+    messages.error(request, "Your item is added to your cart.")
     # Redirect somewhere
     return redirect('get_products')
     
 
 def remove_item(request): 
     id = request.POST['product_id']
-    quantity = int(request.POST['quantity'])
     products = get_object_or_404(Product, pk=id)
     cart = request.session.get('cart', {})
     
     if cart[id] > 1:
-        cart[id] = quantity
+        cart[id] = cart.get(id, 0) - 1
     else:
         del cart[id]
     request.session['cart'] = cart

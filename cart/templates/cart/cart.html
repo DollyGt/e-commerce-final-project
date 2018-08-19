@@ -4,7 +4,7 @@
 {% block content %}
 
 
-
+<div class="container">
 <h2>Shopping Cart</h2>
 
 {% if cart_items %}
@@ -25,18 +25,19 @@
         {% for p in cart_items %}    
       <tr>
           
-        
+        <form action='{% url "remove_from_cart" %}' method="POST">
         <td><img src="{{MEDIA_URL}}{{p.image}}" width="150px" height="120px" border-radius='50'></img></td>
         <td>{{p.name}}</td>
         <td>P{{p.price}}</td>
-        <td>{{p.quantity}}</td>
+        <td><input class="form-control" type="number" name="quantity" value="{{p.quantity}}"/></td>
         <td>{{p.sub_total}}</td>
-        <td> <form action='{% url "remove_from_cart" %}' method="POST">
+        <td>
                 {% csrf_token %}
                 <input type="hidden" name="product_id" value="{{ p.id }}"/>
-                <button class="btn-sm btn-danger">Remove</button>
-                </form>
+                <button class="btn-sm btn-danger">Update</button>
+                
         </td>
+        </form>
     </tr>  
     
    
@@ -53,13 +54,18 @@
         </tr>
         </tbody>
     </table>
+    <a href="{% url "get_products" %}" class='btn add-buy'>Continue Shopping</a>
+    <br>
 <form action='{% url "checkout" %}'>
         {% csrf_token %}
-        <button class='btn-sm btn-success'>Checkout</button>
+        <button class='btn add-buy'>Checkout</button>
 </form>
+<br>
+    
 
 {% else %}
 <h2 class="redlabelled">Your Cart is empty!</h2>
 {% endif %}
 
+</div>
 {% endblock %}
