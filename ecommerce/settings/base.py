@@ -11,16 +11,9 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
-import dj_database_url
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -45,8 +38,11 @@ INSTALLED_APPS = [
     'cart',
     'checkout',
     'reviews',
-    'categories'
+    'categories',
+    
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -63,7 +59,7 @@ ROOT_URLCONF = 'ecommerce.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -72,12 +68,11 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
-                'processor.categories'
+                'django.template.context_processors.request', 
             ],
         },
     },
 ]
-
 
 WSGI_APPLICATION = 'ecommerce.wsgi.application'
 
@@ -95,9 +90,9 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
-  'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
-}
+# DATABASES = {
+#   'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+# }
 
 
 # Password validation
@@ -133,8 +128,7 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.0/howto/static-files/
+
 STRIPE_PUBLISHABLE = os.environ.get('STRIPE_PUBLISHABLE_KEY')
 STRIPE_SECRET = os.environ.get('STRIPE_SECRET_KEY')
 

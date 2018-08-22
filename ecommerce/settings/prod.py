@@ -1,8 +1,14 @@
+# PRODUCTION SETTINGS
 from .base import *
-
+import dj_database_url
 
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
+# Database
+# https://docs.djangoproject.com/en/2.0/ref/settings/#databases
+DATABASES = {
+     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
 AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
 AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
@@ -20,4 +26,5 @@ STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
 
 
-
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+SYSTEM_EMAIL = 'yourname@example.com'

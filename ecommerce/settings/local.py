@@ -1,11 +1,15 @@
-
+# LOCAL SETTINGS
 from .base import *
-# LOCAL
 
+# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY='ovrny$2jc%ztbdihz%ob*k64za!$n(0pn8mj94m33@&-7%25ud'
 
-#Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.0/howto/static-files/
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
