@@ -25,17 +25,17 @@
         {% for p in cart_items %}    
       <tr>
           
-        <form action='{% url "remove_from_cart" %}' method="POST">
+        <form action='{% url "update_cart" %}' method="POST">
         <td><img src="{{MEDIA_URL}}{{p.image}}" width="150px" height="120px" border-radius='50'></img></td>
         <td>{{p.name}}</td>
         <td>P{{p.price}}</td>
         <td><input class="form-control" type="number" name="quantity" value="{{p.quantity}}"/></td>
         <td>{{p.sub_total}}</td>
         <td>
-                {% csrf_token %}
-                <input type="hidden" name="product_id" value="{{ p.id }}"/>
-                <button class="btn-sm btn-danger">Update</button>
-                
+            {% csrf_token %}
+            <input type="hidden" name="product_id" value="{{ p.id }}"/>
+            <button class="btn-sm btn-danger">Update</button>
+            
         </td>
         </form>
     </tr>  

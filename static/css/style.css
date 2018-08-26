@@ -13,6 +13,10 @@
     background-color: #ee3780;
     color: white;
 }
+.navbar-toggle .icon-bar{
+    color: white !important;
+    border-bottom: 2px solid white;
+}
 .btn.add-buy {
     border-radius: 0px;
     display: block;

@@ -32,20 +32,26 @@ def add_to_cart(request):
     return redirect('get_products')
     
 
-def remove_item(request): 
+def remove_from_cart(request): 
+    id = request.POST['product_id']
+    products = get_object_or_404(Product, pk=id)
+    cart = request.session.get('cart', {})
+    del cart[id]
+    request.session['cart'] = cart
+    messages.error(request, "Your item is removed from your cart.")
+    return redirect('view_cart')
+
+def update_cart(request): 
     id = request.POST['product_id']
     quantity = int(request.POST['quantity'])
     products = get_object_or_404(Product, pk=id)
     cart = request.session.get('cart', {})
     
-    if cart[id] > 1:
-        cart[id] = quantity
-    else:
-        del cart[id]
-    request.session['cart'] = cart
-    messages.error(request, "Your item is removed from your cart.")
-    return redirect('view_cart')
+    cart[id] = cart.get(id, 0 ) * 0 + quantity
     
+    request.session['cart'] = cart
+    messages.error(request, "Your cart is updated.")
+    return redirect('view_cart')    
 
 def buynow(request):
 
