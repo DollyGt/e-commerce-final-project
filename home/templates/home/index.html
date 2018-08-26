@@ -36,7 +36,7 @@
         {% if product.discount > 0 %}
             <p class="other">{{product.discount}}% OFF <span class="was">Was {{product.priceOld}}</span></p>
             <h5>Now Only {{product.price}}</h5>
-        {% endif %}
+        {% endif %}  
         <p class="ratings">
         {% if product.stars %} 
          {% for star in product.stars %}
