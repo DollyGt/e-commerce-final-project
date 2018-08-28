@@ -104,22 +104,19 @@ All code has been tested to make sure that everything is working as expected. Au
 
 The website is user friendly, recognises  desktop browsers and it is also mobile compatible. Using webview/ chrome view and safari same website can be used as an Android App with zero changes.
 
-Below is an overview of how the site looks on different screen sizes.
+*Below is an overview of how the site looks on different screen sizes.
 
 
-    *****____________________******
 
-Contact form:
 
-Go to the "Contact Us" page
-Try to submit the empty form and verify that an error message about the required fields appears
-Try to submit the form with an invalid email address and verify that a relevant error message appears
-Try to submit the form with all inputs valid and verify that a success message appears.
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+Contact form, check out form, login form, register form were all tested to ensure that:
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
+when the user attempts to submit the empty form an error message about the required fields appears
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+when the user attempts to submit the invalid email address error message appears
+
+In the instance that all forms are filled correctly success message appears.
+
 
 # Deployment
 
@@ -139,18 +136,18 @@ If this section grows too long, you may want to split it off into a separate fil
 
 2.Then use the following commands to install what you would need to be installed:
 
-	$ sudo pip3 install Django
+*$ sudo pip3 install Django
 
-	$ sudo pip3 install django-forms-bootstrap
+*$ sudo pip3 install django-forms-bootstrap
 
-	$ sudo pip3 install pillow 
+*$ sudo pip3 install pillow
 
-	$ sudo pip3 -r install requirements.txt
+*$ sudo pip3 -r install requirements.txt
 
 
 # Media
 
-All images used are obtained from pexels website [here](https://pixels.com/).
+All images used were obtained from pexels website [here](https://www.pexels.com/).
 
 # Acknowledgements
 
