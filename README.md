@@ -7,16 +7,12 @@ A simple web interface that implements a simple and secure e-commerce using Pyth
 Each user can register to the website by providing first name,  password and email address. Only a  registered user can access checkout and would also be able to leave a review and rate the products based on their experiences. Non registered users can only view products.
 Once user is authenticated their session would expire within 2 minutes if they were to be inactive within that time period. If a user tries to perform any activity which requires user authentication after 2 minutes of inactivity, the operation must be discarded and the user redirected again to a login page. The user must be forced to use the HTTPS protocol for the authentication process and for all the operations that require user authentication.
 
-REMEMBER TO EDIT
 
 # UX
 
-Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
+Human hair extensions for all ladies alike have never been in a greater demand. I have often experienced the difficulties of finding hair extensions that really suited my needs, therefore i was inspired to focus on something that would bring people like me together through the love of sharing hair extensions experiences. The benefits of hair extensions are endless. For those users who are not blessed with Disney princess-like locks, using hair extensions is a great solution for getting the hair they’ve always dreamed of. Hair extensions come in a variety of colors, lengths and textures. People with straight hair can try curly hair or vice versa. People with short hair can get extensions and style them in up-dos for special occasions. They can try all manner of color and texture combinations with no commitment and without having to process their natural hair.
 
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
-
-
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
+All wireframes are drawn with a pencil and can be accessed in media folder in the main project.
 
 # Features
 
@@ -93,7 +89,6 @@ The project uses JQuery to simplify DOM manipulation.
 
 6.Django2
 
-REMEMBER TO EDIT
 
 # Testing
 
@@ -109,7 +104,9 @@ All code has been tested to make sure that everything is working as expected. Au
 
 The website is user friendly, recognises  desktop browsers and it is also mobile compatible. Using webview/ chrome view and safari same website can be used as an Android App with zero changes.
 
-Below is an overview of how the site looks with different screen sizes.
+Below is an overview of how the site looks on different screen sizes.
+
+
     *****____________________******
 
 Contact form:
@@ -126,7 +123,7 @@ If this section grows too long, you may want to split it off into a separate fil
 
 # Deployment
 
-This site is hosted in Heroku. Click here to see a live version.
+<!--This site is hosted in Heroku. Click [here](https://ecommercedolly.herokuapp.com/) to see a live version.-->
 
 1.You would have to go to the repository where your deployment is intended to be set
 
@@ -150,16 +147,13 @@ This site is hosted in Heroku. Click here to see a live version.
 
 	$ sudo pip3 -r install requirements.txt
 
-# Content
-
-The text for section Y was copied from the Wikipedia article Z
 
 # Media
 
-All images used are obtained from pexels website
+All images used are obtained from pexels website [here](https://pixels.com/).
 
 # Acknowledgements
 
-I got the inspiration of this website from sunlight hair extensions website and tried to replicate it using only the technologies mentioned above. Here is the link to their website.
+I got the inspiration of this website from sunlight hair extensions website and tried to replicate it using only the technologies mentioned above. Here is the [link](https://sunlighthumanhair.aliexpress.com/store/1019491?src=google&albch=search&acnt=479-062-3723&isdl=y&aff_short_key=UneMJZVf&albcp=266121556&albag=7593673036&slnk=&trgt=dsa-125690196044&plac=&crea=64152518716&netw=g&device=c&mtctp=b&memo1=1t1&albbt=Google_7_search&aff_platform=google&gclid=EAIaIQobChMIoqX7r_eP3QIVz7_tCh1N4gOUEAAYASAAEgKeR_D_BwE) to their website.
 
-REMEMBER TO EDIT------------------
+
