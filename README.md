@@ -100,14 +100,7 @@ All code has been tested to make sure that everything is working as expected. Au
 
 3.Registration email
 
-4.User registration form etc..
-
-The website is user friendly, recognises  desktop browsers and it is also mobile compatible. Using webview/ chrome view and safari same website can be used as an Android App with zero changes.
-
-*Below is an overview of how the site looks on different screen sizes.
-
-
-
+4.User registration form 
 
 Contact form, check out form, login form, register form were all tested to ensure that:
 
@@ -117,10 +110,17 @@ when the user attempts to submit the invalid email address error message appears
 
 In the instance that all forms are filled correctly success message appears.
 
+The website is user friendly, recognises  desktop browsers and it is also mobile compatible. Using webview/ chrome view and safari same website can be used as an Android App with zero changes.
+
+* Below is an overview of how the site looks on different screen sizes.
+
+![alt text](https://github.com/DollyGt/e-commerce-final-project/blob/master/media/screenshot1.png)
+
+![alt text](https://github.com/DollyGt/e-commerce-final-project/blob/master/media/screenshot2.png)
+
+
 
 # Deployment
-
-<!--This site is hosted in Heroku. Click [here](https://ecommercedolly.herokuapp.com/) to see a live version.-->
 
 1.You would have to go to the repository where your deployment is intended to be set
 
@@ -136,14 +136,15 @@ In the instance that all forms are filled correctly success message appears.
 
 2.Then use the following commands to install what you would need to be installed:
 
-*$ sudo pip3 install Django
+* $ sudo pip3 install Django
 
-*$ sudo pip3 install django-forms-bootstrap
+* $ sudo pip3 install django-forms-bootstrap
 
-*$ sudo pip3 install pillow
+* $ sudo pip3 install pillow
 
-*$ sudo pip3 -r install requirements.txt
+* $ sudo pip3 -r install requirements.txt
 
+<!--This site is hosted in Heroku. Click [here](https://ecommercedolly.herokuapp.com/) to see a live version.-->
 
 # Media
 
