@@ -16,7 +16,7 @@ All wireframes are drawn with a pencil and can be accessed in media folder in th
 
 # Features
 
-Home page
+* Home page
 
 First page of the application. This page shows the store window with products, price, reviews, cart and categories.
 The user can Log In if they are already registered or Sign Up by registering if they are not already registered.
@@ -27,9 +27,7 @@ Dependencies:
 
 index.html - Log In
 
-Account, registration
-
-User Registration From. 
+* Account, User registration form
 
 This module gets the user paramters from the Registration Form, performs the appropriate checks and writes the user data in the database.
 
@@ -37,7 +35,7 @@ Dependencies:
 
 register.html - Register 
 
-products, categories
+* products, categories
 
 In this page the user can choose the products they want to buy. A lateral bar indicates the log status and the cart status.
 
@@ -47,7 +45,7 @@ products.html - Add Items to the Cart - cart.html
 
 products_detail.html - Show the Cart - cart.html
 
-cart
+* cart
 
 This module gets the cart parameters from the Add To Cart Form, performs the appropriate checks and write the cart data in the database 
 At the end of all the operation, the module redirects the user to the Store/home page.
@@ -56,7 +54,7 @@ Dependencies:
 
 cart.html - products.html
 
-cart, checkout
+* cart, checkout
 
 This page shows the Cart with products, quantity and total amount of chosen products.
 The user can pay for the chosen products (putting the credit card parameters), empty the cart or go back to the store. In this page, the user has 2 options, either to click on continue shopping button or check out button. The continue shopping redirects the user to products. With the checkout, upon payment, the module gets the credit card parameters from the Payment Form, checks the chosen products and then simulates a payment transation. In case of successful transation, the module empties the cart.
@@ -72,8 +70,6 @@ I would like to add a feature that would allow registered customers to be inform
 
 # Technologies Used
 
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
-
 JQuery
 The project uses JQuery to simplify DOM manipulation.
 
@@ -88,7 +84,6 @@ The project uses JQuery to simplify DOM manipulation.
 5.Python3
 
 6.Django2
-
 
 # Testing
 
@@ -112,12 +107,11 @@ In the instance that all forms are filled correctly success message appears.
 
 The website is user friendly, recognises  desktop browsers and it is also mobile compatible. Using webview/ chrome view and safari same website can be used as an Android App with zero changes.
 
-* Below is an overview of how the site looks on different screen sizes.
+* Below are screenshots of how the site looks on different screen sizes.
 
 ![alt text](https://github.com/DollyGt/e-commerce-final-project/blob/master/media/screenshot1.png)
 
 ![alt text](https://github.com/DollyGt/e-commerce-final-project/blob/master/media/screenshot2.png)
-
 
 
 # Deployment
@@ -136,13 +130,14 @@ The website is user friendly, recognises  desktop browsers and it is also mobile
 
 2.Then use the following commands to install what you would need to be installed:
 
-* $ sudo pip3 install Django
+ ```$ sudo pip3 install Django
 
-* $ sudo pip3 install django-forms-bootstrap
+    $ sudo pip3 install django-forms-bootstrap
 
-* $ sudo pip3 install pillow
+    $ sudo pip3 install pillow
 
-* $ sudo pip3 -r install requirements.txt
+    $ sudo pip3 -r install requirements.txt
+```
 
 <!--This site is hosted in Heroku. Click [here](https://ecommercedolly.herokuapp.com/) to see a live version.-->
 
