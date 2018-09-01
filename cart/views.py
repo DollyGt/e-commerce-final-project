@@ -47,7 +47,12 @@ def update_cart(request):
     products = get_object_or_404(Product, pk=id)
     cart = request.session.get('cart', {})
     
-    cart[id] = cart.get(id, 0 ) * 0 + quantity
+    if quantity > 0:
+        cart[id] = quantity
+    else:
+        del cart[id]
+    
+    # cart[id] = cart.get(id, 0 ) * 0 + quantity
     
     request.session['cart'] = cart
     messages.error(request, "Your cart is updated.")
