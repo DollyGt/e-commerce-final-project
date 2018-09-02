@@ -11,9 +11,9 @@ Human hair extensions for all ladies alike have never been in greater demand. I 
 Each user can register to the website by providing first name,  password and email address. Only a  registered user can access checkout and would also be able to leave a review and rate the products based on their experiences. Non registered users can only view products.
 Once user is authenticated their session would expire within 2 minutes if they were to be inactive within that time period. If a user tries to perform any activity which requires user authentication after 2 minutes of inactivity, the operation must be discarded and the user redirected again to a login page. The user must be forced to use the HTTPS protocol for the authentication process and for all the operations that require user authentication.
 
-All wireframes are drawn with a pencil and can be accessed in media folder in the main project.
+All wireframes are manually drawn with a pencil and can be accessed in media folder in the main project.
 
-* Screenshots.
+# Screenshots.
 
 ![alt text](https://github.com/DollyGt/e-commerce-final-project/blob/master/media/screenshot1.png)
 
