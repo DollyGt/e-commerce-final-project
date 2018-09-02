@@ -13,6 +13,14 @@ Once user is authenticated their session would expire within 2 minutes if they w
 
 All wireframes are drawn with a pencil and can be accessed in media folder in the main project.
 
+* Screenshots.
+
+![alt text](https://github.com/DollyGt/e-commerce-final-project/blob/master/media/screenshot1.png)
+
+![alt text](https://github.com/DollyGt/e-commerce-final-project/blob/master/media/screenshot2.png)
+
+
+
 # Features
 
 * Home page
@@ -102,13 +110,6 @@ when the user attempts to submit the invalid email address error message appears
 In the instance that all forms are filled correctly success message appears.
 
 The website is user friendly, recognises  desktop browsers and it is also mobile compatible. Using webview/ chrome view and safari same website can be used as an Android App with zero changes.
-
-* Below are screenshots of how the site looks on different screen sizes.
-
-![alt text](https://github.com/DollyGt/e-commerce-final-project/blob/master/media/screenshot1.png)
-
-![alt text](https://github.com/DollyGt/e-commerce-final-project/blob/master/media/screenshot2.png)
-
 
 # Deployment
 
