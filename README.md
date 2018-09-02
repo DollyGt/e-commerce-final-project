@@ -4,13 +4,12 @@ A simple web interface that implements a simple and secure e-commerce using Pyth
 
 # Overview
 
-Each user can register to the website by providing first name,  password and email address. Only a  registered user can access checkout and would also be able to leave a review and rate the products based on their experiences. Non registered users can only view products.
-Once user is authenticated their session would expire within 2 minutes if they were to be inactive within that time period. If a user tries to perform any activity which requires user authentication after 2 minutes of inactivity, the operation must be discarded and the user redirected again to a login page. The user must be forced to use the HTTPS protocol for the authentication process and for all the operations that require user authentication.
-
+Human hair extensions for all ladies alike have never been in greater demand. I have often experienced the difficulties of finding hair extensions that really suited my needs, therefore i was inspired to focus on something that would bring people like me together through the love of sharing hair extensions experiences. The benefits of hair extensions are endless. For those users who are not blessed with Disney princess-like locks, using hair extensions is a great solution for getting the hair they’ve always dreamed of. Hair extensions come in a variety of colors, lengths and textures. People with straight hair can try curly hair or vice versa. People with short hair can get extensions and style them in up-dos for special occasions. They can try all manner of color and texture combinations with no commitment and without having to process their natural hair.
 
 # UX
 
-Human hair extensions for all ladies alike have never been in a greater demand. I have often experienced the difficulties of finding hair extensions that really suited my needs, therefore i was inspired to focus on something that would bring people like me together through the love of sharing hair extensions experiences. The benefits of hair extensions are endless. For those users who are not blessed with Disney princess-like locks, using hair extensions is a great solution for getting the hair they’ve always dreamed of. Hair extensions come in a variety of colors, lengths and textures. People with straight hair can try curly hair or vice versa. People with short hair can get extensions and style them in up-dos for special occasions. They can try all manner of color and texture combinations with no commitment and without having to process their natural hair.
+Each user can register to the website by providing first name,  password and email address. Only a  registered user can access checkout and would also be able to leave a review and rate the products based on their experiences. Non registered users can only view products.
+Once user is authenticated their session would expire within 2 minutes if they were to be inactive within that time period. If a user tries to perform any activity which requires user authentication after 2 minutes of inactivity, the operation must be discarded and the user redirected again to a login page. The user must be forced to use the HTTPS protocol for the authentication process and for all the operations that require user authentication.
 
 All wireframes are drawn with a pencil and can be accessed in media folder in the main project.
 
@@ -69,9 +68,6 @@ Checkout.html - home page
 I would like to add a feature that would allow registered customers to be informed of new arrivals and monthly offers without having to be logged on the website. Registered users would have to first agree with these terms and conditions then they can receive such information via email whenever such offers exists. This would ensure  that registered customers would be the first to know of any news regarding the products earlier than others. I would also like to add bidding feature that would allow registered customers to bid for products based on meeting a certain criteria in which only after they have spent so much in total within a particular period can they access the bidding platform. Bidding would ensure that at some point they would be likely to purchase an item at a mush lower price.
 
 # Technologies Used
-
-JQuery
-The project uses JQuery to simplify DOM manipulation.
 
 1.HTML5
 
@@ -138,8 +134,9 @@ The website is user friendly, recognises  desktop browsers and it is also mobile
 
     $ sudo pip3 -r install requirements.txt
 ```
+# Demo
 
-<!--This site is hosted in Heroku. Click [here](https://ecommercedolly.herokuapp.com/) to see a live version.-->
+This site is hosted in Heroku. Click [here](https://ecommercedolly.herokuapp.com/) to see a live version.
 
 # Media
 
