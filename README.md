@@ -4,7 +4,7 @@ A simple web interface that implements a simple and secure e-commerce using Pyth
 
 # Overview
 
-Human hair extensions for all ladies alike have never been in greater demand. I have often experienced the difficulties of finding hair extensions that really suited my needs, therefore i was inspired to focus on something that would bring people like me together through the love of sharing hair extensions experiences. The benefits of hair extensions are endless. For those users who are not blessed with Disney princess-like locks, using hair extensions is a great solution for getting the hair they’ve always dreamed of. Hair extensions come in a variety of colors, lengths and textures. People with straight hair can try curly hair or vice versa. People with short hair can get extensions and style them in up-dos for special occasions. They can try all manner of color and texture combinations with no commitment and without having to process their natural hair.
+Human hair extensions for all ladies alike have never been in greater demand therefore i have decided to create my own hair extensions website for learning purposes.
 
 # UX
 
