@@ -1,8 +1,10 @@
+
+
 .product h4 {
     min-height: 2.2em;
 }
 .btn.read-more {
-    border-top: 1px solid #ee3780;
+    border-top: 1px solid #808080;
     border-radius: 0px;
     display: block;
     background-color: transparent;
@@ -10,7 +12,7 @@
     transition: all ease-in-out 0.3s;
 }
 .btn.read-more:hover {
-    background-color: #ee3780;
+    background-color: #808080;
     color: white;
 }
 .navbar-toggle .icon-bar{
@@ -20,7 +22,7 @@
 .btn.add-buy {
     border-radius: 0px;
     display: block;
-    background-color: #ee3780;
+    background-color: #808080;
     width: 50%;
     text-align: center;
     color: white;
@@ -93,10 +95,10 @@ font-family: 'Oswald', sans-serif;
     background-color: #bc3067;
 }
 #footer {
-    background-color: #EB3C81;
+    background-color: #808080;
     margin-top: 50px;
-    min-height: 150px;
-    border-bottom: 30px solid #bc3067;
+    min-height: 50px;
+    border-bottom: 4px solid #bc3067;
     color: white;
 }
 p.ratings i{
